@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = '2.ComponentesYServicios';
+  imgParent = '';
+
+  onLoaded(img: string) {
+    console.log('load padre', img)
+  }
 }
