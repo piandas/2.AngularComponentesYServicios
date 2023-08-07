@@ -16,8 +16,8 @@ export class ImgComponent implements OnDestroy{
   @Input() img: string = '';
   @Output() loaded = new EventEmitter<string>();
   imageDefault:string = './assets/images/default.png'
-  counter = 0;
-  counterFn: number | undefined; //Sirve para destruir el proceso
+/*   counter = 0;
+  counterFn: number | undefined;  *///Sirve para destruir el proceso
 
   constructor() {
     //before render
@@ -36,10 +36,10 @@ export class ImgComponent implements OnDestroy{
     //before render
     //aqui si corren cosas asyncronas, solo se corre una vez, como fetch, llamadas a API, promesas.
     console.log('ngOnInit','imgValue =>', this.img);
-    this.counterFn = window.setInterval(() => { //Aqui va el contador porque es algo asyncrono
+/*     this.counterFn = window.setInterval(() => { //Aqui va el contador porque es algo asyncrono
       this.counter += 1; //Cada vez que pase 1 seguno se aumentara en 1
       console.log('run counter');
-    }, 1000);
+    }, 1000); */
   }
 
   ngAfterViewInit() {
@@ -51,7 +51,7 @@ export class ImgComponent implements OnDestroy{
   ngOnDestroy() {
     //se elimina este componente
     console.log('ngOnDestroy');
-    window.clearInterval(this.counterFn) //Asi se limpia un evento y se finaliza
+/*     window.clearInterval(this.counterFn) */ //Asi se limpia un evento y se finaliza
   }
 
   imgError() {
